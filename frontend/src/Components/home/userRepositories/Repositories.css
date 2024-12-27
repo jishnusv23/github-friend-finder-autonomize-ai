@@ -1,0 +1,16 @@
+.repositories-comp {
+  display: grid !important;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  gap: 16px;
+  padding: 20px;
+}
+.repo-row {
+  padding: 20px;
+  background-color: rgb(7, 103, 145);
+  border-radius: 15px;
+  border: 1px solid gray;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}

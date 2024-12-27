@@ -17,7 +17,7 @@ const gitHubSlice = createSlice({
     updateUserInfo: (state, action) => {
       state.gitHubState = {
         ...state.gitHubState,
-        userRepositories: action.payload,
+        userInfo: action.payload,
       };
     },
     updateUserRepositories: (state, action) => {

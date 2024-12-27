@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #0066ff;
+  border-radius: 12px;
+  color: black;
+  gap: 20px;
+}
+
+.profile-box {
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  min-width: 200px;
+  width: 100%;
+}
+.profile-box img.user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.profile-box h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.follow-box {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
