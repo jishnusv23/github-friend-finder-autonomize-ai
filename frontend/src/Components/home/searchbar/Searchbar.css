@@ -1,0 +1,12 @@
+.input-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  gap: 8px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}

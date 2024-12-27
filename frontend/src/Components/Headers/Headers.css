@@ -1,0 +1,13 @@
+.headers {
+  background-color: #bc0202;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  font-family: "Poppins", sans-serif;
+}
+.headers h1 {
+  color: black;
+  background-color: #bc0202;
+}
