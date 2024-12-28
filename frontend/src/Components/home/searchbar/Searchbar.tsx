@@ -21,7 +21,7 @@ const Searchbar = () => {
     setInputValue(e.target.value);
   };
   const handleSubmit = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await CLIENT_API.get(`/api/create-user/${inputValue}`);
       // console.log(
@@ -38,9 +38,9 @@ const Searchbar = () => {
           },
         }
       );
-      console.log("🚀 ~ file: Searchbar.tsx:40 ~ handleSubmit ~ repos:", repos)
-      dispatch(updateUserRepositories(repos.data))
-      setLoading(false)
+      // console.log("🚀 ~ file: Searchbar.tsx:40 ~ handleSubmit ~ repos:", repos);
+      dispatch(updateUserRepositories(repos.data));
+      setLoading(false);
     } catch (error: any) {
       console.error("something wrong", error);
     }

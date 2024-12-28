@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { Routes } from "./routes";
 import sequelize from "./config/database";
+import errorHandler from "./middleware/errorHandler";
 config();
 const app: Application = express();
 const PORT: number = Number(process.env.PORT);
@@ -19,11 +20,23 @@ app.use(
 );
 
 app.use("/api", Routes());
+app.use(errorHandler);
+
+//not found api 
+app.all("*", (req: Request, res: Response) => {
+  res
+    .status(404)
+    .json({ success: false, status: 404, message: "API Not found" });
+});
+  
+
+
 if (!process.env.DATABASE_URL) {
   throw new Error(
     "PostgreSQL connection string not provided in environment variables"
   );
 }
+
 
 app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT} 👽`);

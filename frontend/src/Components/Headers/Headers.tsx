@@ -4,13 +4,15 @@ import "./Headers.css";
 import { useNavigate } from "react-router-dom";
 
 const Headers = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
   return (
-    <div className="headers" onClick={() => navigate("/")}>
-      <h1>GitHub-Friend-Finder</h1>
+    <div className="headers" >
+      <h1 onClick={() => navigate("/")}>GitHub-Friend-Finder</h1>
       <Button
         style={{ backgroundColor: "white", color: "black" }}
         text="Users"
+        onClick={() => navigate("/userslist")}
       />
     </div>
   );

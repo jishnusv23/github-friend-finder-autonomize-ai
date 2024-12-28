@@ -13,3 +13,11 @@ export interface InputProps {
   value?: string;
   onKeyDown?:(e:React.KeyboardEvent<HTMLInputElement>)=>void
 }
+export interface User {
+  id: string;
+  avatar_url: string;
+  name: string;
+  type: string;
+  followers: number;
+  following: number;
+}

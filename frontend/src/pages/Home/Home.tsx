@@ -5,16 +5,27 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import Profile from "../../Components/home/profile/Profile";
 import Repositories from "../../Components/home/userRepositories/Repositories";
-
+import './Home.css'
 const Home = () => {
-  const { gitHubData } = useSelector((state: RootState) => state.gitHubData);
-  console.log("🚀 ~ file: Home.tsx:9 ~ Home ~ gitHubData:", gitHubData);
+  const { userInfo } = useSelector(
+    (state: RootState) => state.gitHubData.gitHubState
+  );
+  // console.log("🚀 ~ file: Home.tsx:11 ~ Home ~ userInfo:", userInfo);
   return (
     <div>
       <Headers />
       <Searchbar />
-      <Profile />
-      <Repositories/>
+      {Object.keys(userInfo).length ? (
+        <>
+          <Profile />
+          <Repositories />
+        </>
+      ) : (
+        <div className="empty">
+          Oops! No results found. Please try searching for a valid GitHub
+          username.
+        </div>
+      )}
     </div>
   );
 };

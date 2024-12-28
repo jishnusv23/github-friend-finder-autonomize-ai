@@ -3,6 +3,7 @@ import "./Followers.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { endpoints } from "../../utils/api";
+import LoadingPopUp from "../ui/LoadingPopUp/LoadingPopUp";
 const Followers = () => {
   const { userName } = useParams();
   const [loading, setLoading] = useState(false);
@@ -28,6 +29,7 @@ const Followers = () => {
         setLoading(false);
       } catch (error: any) {
         console.error("Error showing find the followers data", error);
+        setLoading(false)
       }
     }
     findFollowers()
@@ -35,6 +37,7 @@ const Followers = () => {
 
   return (
     <>
+      {loading && <LoadingPopUp />}
       <div className="follower-head">
         <h1>Followers</h1>
       </div>
