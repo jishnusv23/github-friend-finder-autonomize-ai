@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./SingleRepos.css";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { endpoints } from "../../utils/api";
 
 const SignleRepos = () => {
   const { repoName } = useParams();
-  console.log("🚀 ~ file: SignleRepos.tsx:9 ~ SignleRepos ~ params:", repoName);
+  // console.log("🚀 ~ file: SignleRepos.tsx:9 ~ SignleRepos ~ params:", repoName);
   const { userInfo } = useSelector(
     (state: RootState) => state.gitHubData.gitHubState
   );

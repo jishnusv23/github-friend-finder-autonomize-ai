@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Profile.css";
 import Button from "../../ui/Button/Button";
 import { useSelector } from "react-redux";
@@ -10,9 +10,9 @@ const Profile = () => {
   const { userInfo } = useSelector(
     (state: RootState) => state.gitHubData.gitHubState
   );
-  console.log("🚀 ~ file: Profile.tsx:9 ~ Profile ~ userInfo:", userInfo);
+  // console.log("🚀 ~ file: Profile.tsx:9 ~ Profile ~ userInfo:", userInfo);
 
-  // You can now use userInfo and userRepositories in your component
+  
 
   return (
     <div className="profile">

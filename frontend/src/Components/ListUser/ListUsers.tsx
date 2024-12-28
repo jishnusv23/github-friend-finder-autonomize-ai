@@ -5,8 +5,9 @@ import { CLIENT_API } from "../../utils/axios/axios";
 import { User } from "../../types";
 import Button from "../ui/Button/Button";
 import ConfirmationModal from "../ui/Modal/ConfirmationModal";
-import { response } from "express";
 import LoadingPopUp from "../ui/LoadingPopUp/LoadingPopUp";
+import { toast } from "sonner";
+
 
 const ListUsers = () => {
   const [loading, setLoading] = useState(false);
@@ -65,15 +66,15 @@ const ListUsers = () => {
       setUsers((prevUsers) =>
         prevUsers.filter((user) => user.id !== selectedUserId)
       );
-      if(response.data.success){
-        console.log('first')
-    }
+       toast.success(response.data.message)
     setIsDelete(false);
     setSelectedUserId(null);
         setLoading(false);
-    } catch (error) {
+    } catch (error:any) {
       console.error("Error deleting user", error);
+      
       setLoading(false);
+      toast.error(error.message)
     }
   };
 

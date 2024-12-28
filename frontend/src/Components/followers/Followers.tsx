@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Followers.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -21,10 +21,10 @@ const Followers = () => {
             },
           }
         );
-        console.log(
-          "🚀 ~ file: Followers.tsx:24 ~ findFollowers ~ response:",
-          response
-        );
+        // console.log(
+        //   "🚀 ~ file: Followers.tsx:24 ~ findFollowers ~ response:",
+        //   response
+        // );
         setFollowers(response.data);
         setLoading(false);
       } catch (error: any) {

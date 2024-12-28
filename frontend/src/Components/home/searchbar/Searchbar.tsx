@@ -8,17 +8,27 @@ import { useDispatch } from "react-redux";
 import { updateUserInfo, updateUserRepositories } from "../../../redux/slice";
 import axios from "axios";
 import { endpoints } from "../../../utils/api";
+import { toast } from "sonner";
 
 const Searchbar = () => {
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
-  console.log(
-    "🚀 ~ file: Searchbar.tsx:10 ~ Searchbar ~ inputValue:",
-    inputValue
-  );
+  // console.log(
+  //   "🚀 ~ file: Searchbar.tsx:10 ~ Searchbar ~ inputValue:",
+  //   inputValue
+  // );
   const [loading, setLoading] = useState(false);
   const handleInputValues = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
+  };
+  const handleClear = () => {
+    setInputValue("");
+  };
+  const handleReset = () => {
+    setInputValue("");
+    setLoading(false);
+    dispatch(updateUserInfo({}));
+    dispatch(updateUserRepositories([]));
   };
   const handleSubmit = async () => {
     setLoading(true);
@@ -42,7 +52,15 @@ const Searchbar = () => {
       dispatch(updateUserRepositories(repos.data));
       setLoading(false);
     } catch (error: any) {
-      console.error("something wrong", error);
+      if (axios.isAxiosError(error)) {
+        setLoading(false);
+        console.error("Error fetching:", error.response?.data || error.message);
+        toast.error(`Error: ${error.response?.data?.message || error.message}`);
+      } else {
+        setLoading(false);
+        console.error("Unexpected error:", error);
+        toast.error("An unexpected error occurred.");
+      }
     }
   };
   return (
@@ -63,12 +81,12 @@ const Searchbar = () => {
             />
             <Button
               text="Clear"
-              onClick={() => console.log("Clear")}
+              onClick={handleClear}
               style={{ backgroundColor: "red" }}
             />
             <Button
               text="Reset"
-              onClick={() => console.log("Reset")}
+              onClick={handleReset}
               style={{ backgroundColor: "orange" }}
             />
           </div>

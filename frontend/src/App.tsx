@@ -7,20 +7,23 @@ import FollowerProfilePage from "./pages/FollowerProfile/FollowerProfilePage";
 import UsersListPage from "./pages/Users/UsersListPage";
 import NotFound from "./Components/ui/404/NotFound";
 
+
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/single-repo/:repoName" element={<Repo/>}/>
-          <Route path="/followers/:userName" element={<FollowersPage/>}/>
-          <Route path="/followerProfile/:userName" element={<FollowerProfilePage/>}/>
-          <Route path="/userslist" element={<UsersListPage/>}/>
-          <Route path="*" element={<NotFound/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/single-repo/:repoName" element={<Repo />} />
+          <Route path="/followers/:userName" element={<FollowersPage />} />
+          <Route
+            path="/followerProfile/:userName"
+            element={<FollowerProfilePage />}
+          />
+          <Route path="/userslist" element={<UsersListPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-     
     </>
   );
 }

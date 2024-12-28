@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Repositories.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
@@ -22,7 +22,7 @@ const Repositories = () => {
           },
         }
       );
-      console.log("🚀 ~ file: Searchbar.tsx:40 ~ handleSubmit ~ repos:", repos);
+      // console.log("🚀 ~ file: Searchbar.tsx:40 ~ handleSubmit ~ repos:", repos);
       setFollowerRepos(repos.data);
     };
     findRepo();

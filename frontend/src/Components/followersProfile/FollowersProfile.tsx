@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import "./FollowersProfile.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -20,10 +20,10 @@ const FollowersProfile = () => {
             Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
           },
         });
-        console.log(
-          "🚀 ~ file: FollowersProfile.tsx:19 ~ findFollowerDetails ~ response:",
-          response
-        );
+        // console.log(
+        //   "🚀 ~ file: FollowersProfile.tsx:19 ~ findFollowerDetails ~ response:",
+        //   response
+        // );
         setFollowerData(response.data);
         setLoading(false)
         
