@@ -49,7 +49,7 @@ export const createUserData = async (
         res.status(201).json(newUser);
       }catch(error:any){
          if (error.response && error.response.status === 404) {
-           return res.status(404).json({
+            res.status(404).json({
              message: `GitHub user '${username}' not found. `,
            });
          }
