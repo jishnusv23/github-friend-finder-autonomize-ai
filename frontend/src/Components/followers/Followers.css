@@ -1,0 +1,33 @@
+.follower-head h2 {
+  color: black;
+  padding: 10px;
+  font-size: 30px;
+}
+.follower-list-head {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
+  padding: 20px;
+}
+
+.follower-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.follower-list img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid;
+}

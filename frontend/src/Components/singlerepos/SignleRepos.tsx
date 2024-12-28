@@ -12,6 +12,10 @@ const SignleRepos = () => {
   const { userInfo } = useSelector(
     (state: RootState) => state.gitHubData.gitHubState
   );
+//   console.log(
+//     "🚀 ~ file: SignleRepos.tsx:13 ~ SignleRepos ~ userInfo:",
+//     userInfo
+//   );
   const [repositoriesdata, setRepositoriesData] = useState({
     name: "",
     size: 0,
@@ -27,7 +31,7 @@ const SignleRepos = () => {
           `${endpoints.gitSingleRepo}${userInfo.username}/${repoName}`,
           {
             headers: {
-              Authorization: `token ${process.env.GITHUB_TOKEN}`,
+              Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
             },
           }
         );
@@ -44,7 +48,7 @@ const SignleRepos = () => {
       }
     }
     findRepo();
-  }, [userInfo.login,repoName]);
+  }, [userInfo.login, repoName]);
   return (
     <div className="singleRepo-compo">
       <div className="singlerepo-header">
