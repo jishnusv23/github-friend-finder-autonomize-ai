@@ -6,6 +6,7 @@ import { endpoints } from "../../utils/api";
 import LoadingPopUp from "../ui/LoadingPopUp/LoadingPopUp";
 const Followers = () => {
   const { userName } = useParams();
+  console.log("🚀 ~ file: Followers.tsx:9 ~ Followers ~ userName:", userName)
   const [loading, setLoading] = useState(false);
   const [followers, setFollowers] = useState([]);
   const navigate = useNavigate();

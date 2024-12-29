@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import axios from "axios";
-import UserModel, { User, UserAttributes } from "../models/userModel";
+import  UserModel, { User, UserAttributes } from "../models/userModel";
 import { Op } from "sequelize";
 
 export const createUserData = async (
@@ -124,3 +124,4 @@ export const delteUser = async (
     next(error);
   }
 };
+

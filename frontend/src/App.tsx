@@ -6,6 +6,7 @@ import FollowersPage from "./pages/Followers/FollowersPage";
 import FollowerProfilePage from "./pages/FollowerProfile/FollowerProfilePage";
 import UsersListPage from "./pages/Users/UsersListPage";
 import NotFound from "./Components/ui/404/NotFound";
+import MutalFriendsPage from "./pages/MutualFriends/MutalFriendsPage";
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
           />
           <Route path="/userslist" element={<UsersListPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route
+            path="/mutual/:currentUser/:targetUser"
+            element={<MutalFriendsPage />}
+          />
         </Routes>
       </Router>
     </>

@@ -48,7 +48,7 @@ const Searchbar = () => {
           },
         }
       );
-      // console.log("🚀 ~ file: Searchbar.tsx:40 ~ handleSubmit ~ repos:", repos);
+      
       dispatch(updateUserRepositories(repos.data));
       setLoading(false);
     } catch (error: any) {
