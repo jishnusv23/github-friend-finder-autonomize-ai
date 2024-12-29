@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Headers from '../../Components/Headers/Headers'
 import MutualFriendsList from '../../Components/MutualFriends/MutualFriendsList'
 
